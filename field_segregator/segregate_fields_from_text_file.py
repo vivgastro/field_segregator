@@ -28,6 +28,7 @@ def segregate_fields(inp_file, out_file, field_names, field_lens, byte_starts, b
 
 
 def parse_excel_file(fname, header):
+    print(f"Parsing variable information from excel file - {fname}")
     f = pd.read_excel(fname)
     nrows = len(f)
     irow = -1
@@ -40,10 +41,9 @@ def parse_excel_file(fname, header):
     while True:
         irow +=1
         row = f.iloc[irow]
-        #print("-----------------", irow, "-------------------", "\n", row,"\n\n\n", row[0], type(row[0]))
         if row[0] == header:
             #Target section found, update the section start value and go to the next line
-            print("Found the header at irow", irow)
+            print("Found the section at row number - ", irow)
             section_start = irow
             continue
 
@@ -63,7 +63,7 @@ def parse_excel_file(fname, header):
         if section_start > -1 and type(row[0]) == float and np.isnan(row[0]):
             #We have reached the end of the section
             section_end = irow-1
-            #print("Reached the end of the desired section")
+            print("Finished scanning the desired section")
             break
         if section_end == -1 and irow >= nrows:
             print(f"Could not find the section {header} in the file {fname}!")
