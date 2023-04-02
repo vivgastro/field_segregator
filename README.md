@@ -23,10 +23,10 @@ If you see a `usage` and `options` description, then you're all set to use the p
 
 Read the output of the `sep_fields -h` carefully. You need to specify the requested options
 
-> -e requires the path to the excel file
-> -s requires the section heading to parse
-> -d requires the path to the data file
-> -o requires the name of the output file (optional)
+> -e requires the path to the excel file  
+> -s requires the section heading to parse  
+> -d requires the path to the data file  
+> -o requires the name of the output file (optional)  
 
 An example usage of the script would be:
 
