@@ -1,7 +1,7 @@
 from setuptools import setup
 
 
-requirements = ['numpy']
+requirements = ['numpy', 'pandas', 'tqdm', 'argparse']
 
 setup(name="field_segregator", 
       version=0.1,
